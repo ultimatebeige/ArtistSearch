@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Test</title>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <form id="artist-form">
+                <label for="form-input-artist">Search Term</label>
+                <input
+                    type="text"
+                    id="form-input-artist"
+                    name="search-term"
+                /><br />
+                <input type="submit" />
+            </form>
+
+            <form id="album-form">
+                <label for="form-input-album">Search Term</label>
+                <input
+                    type="text"
+                    id="form-input-album"
+                    name="search-term"
+                /><br />
+                <input type="submit" />
+            </form>
+
+            <div id="display-area">
+                <div id="album-display">
+                    <h1>Albums</h1>
+                </div>
+                <div id="ep-display">
+                    <h1>EPs</h1>
+                </div>
+                <div id="single-display">
+                    <h1>Singles</h1>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
