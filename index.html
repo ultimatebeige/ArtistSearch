@@ -6,19 +6,27 @@
         <title>Test</title>
         <script src="lib/jquery-4.0.0.min.js"></script>
         <script src="script.js" defer></script>
+        <link
+            rel="stylesheet"
+            href="search-portrait.css"
+            media="(orientation: portrait)"
+        />
+
+        <link
+            rel="stylesheet"
+            href="search-landscape.css"
+            media="(orientation: landscape)"
+        />
     </head>
     <body>
         <main>
+            <p id="error-display"></p>
             <form id="artist-form">
                 <label for="form-input-artist">Search Term</label>
-                <input
-                    type="text"
-                    id="form-input-artist"
-                    name="search-term"
-                /><br />
+                <input type="text" id="form-input-artist" name="search-term" />
                 <input type="submit" />
             </form>
-
+            <!--
             <form id="album-form">
                 <label for="form-input-album">Search Term</label>
                 <input
@@ -28,17 +36,38 @@
                 /><br />
                 <input type="submit" />
             </form>
-            <div id="artist-display"></div>
+            -->
+            <aside id="artist-display"></aside>
+            <div id="release-buttons">
+                <button
+                    class="release-type-button"
+                    onclick="$('#album-display').show()
+                    $('#single-display').hide()
+                    $('#ep-display').hide()"
+                >
+                    Albums
+                </button>
+                <button
+                    class="release-type-button"
+                    onclick="$('#ep-display').show()
+                    $('#album-display').hide()
+                    $('#single-display').hide()"
+                >
+                    EPs
+                </button>
+                <button
+                    class="release-type-button"
+                    onclick="$('#single-display').show()
+                    $('#album-display').hide()
+                    $('#ep-display').hide()"
+                >
+                    Singles
+                </button>
+            </div>
             <div id="release-display">
-                <div id="album-display">
-                    <h1>Albums</h1>
-                </div>
-                <div id="ep-display">
-                    <h1>EPs</h1>
-                </div>
-                <div id="single-display">
-                    <h1>Singles</h1>
-                </div>
+                <div id="album-display"></div>
+                <div id="ep-display"></div>
+                <div id="single-display"></div>
             </div>
         </main>
     </body>

@@ -1,0 +1,38 @@
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    overflow: hidden;
+    min-height: 0;
+}
+
+#artist-display {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: 75px 75px;
+}
+
+.artist-button {
+    overflow-y: hidden;
+}
+
+#release-buttons {
+    display: flex;
+}
+
+.release-type-button {
+    flex: 1;
+}
+
+#release-display {
+    flex 1 1 0;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+
+.release-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
