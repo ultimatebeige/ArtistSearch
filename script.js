@@ -25,6 +25,11 @@ document
                 .addClass("artist-button")
                 .on("click", function () {
                     $("#error-display").text("");
+                    $(".artist-button.active-button").removeClass(
+                        "active-button",
+                    );
+                    $(this).addClass("active-button");
+
                     updateReleasesId(id);
                 });
             $("#artist-display").append(btn);
@@ -125,10 +130,11 @@ async function updateReleasesId(mbid) {
         const album_display = $("#album-display");
         const ep_display = $("#ep-display");
         const single_display = $("#single-display");
-        
+
         album_display.hide();
         ep_display.hide();
-        single_display.hide();
+        $("#single-button").addClass("active-button");
+        // single_display.hide();
         // display.replaceChildren();
         display.find(".release-container").each(function () {
             $(this).remove();
@@ -157,7 +163,6 @@ async function updateReleasesId(mbid) {
                 });
 
             div.append(img);
-            
 
             if (release_type == "Album") {
                 album_display.append(div);

@@ -6,18 +6,9 @@
         <title>Test</title>
         <script src="lib/jquery-4.0.0.min.js"></script>
         <script src="script.js" defer></script>
-        <link
-            rel="stylesheet"
-            href="search-portrait.css"
-            media="(orientation: portrait)"
-        />
-
-        <link
-            rel="stylesheet"
-            href="search-landscape.css"
-            media="(orientation: landscape)"
-        />
+        <link rel="stylesheet" href="styles.css" />
     </head>
+
     <body>
         <main>
             <p id="error-display"></p>
@@ -41,25 +32,46 @@
             <div id="release-buttons">
                 <button
                     class="release-type-button"
-                    onclick="$('#album-display').show()
-                    $('#single-display').hide()
-                    $('#ep-display').hide()"
+                    onclick="
+                        $('#album-display, #single-display, #ep-display')
+                            .hide()
+                        $('release-type-button.active-button').removeClass(
+                            'active-button',
+                        );
+                        $('#album-display').show();
+                        $(this).addClass('active-button');
+                    "
                 >
                     Albums
                 </button>
                 <button
                     class="release-type-button"
-                    onclick="$('#ep-display').show()
-                    $('#album-display').hide()
-                    $('#single-display').hide()"
+                    onclick="
+                        $('#album-display, #single-display, #ep-display')
+                            .hide()
+                        $('release-type-button.active-button').removeClass(
+                            'active-button',
+                        );
+                        $('#ep-display').show();
+                        $(this).addClass('active-button');
+                    "
                 >
                     EPs
                 </button>
                 <button
                     class="release-type-button"
-                    onclick="$('#single-display').show()
-                    $('#album-display').hide()
-                    $('#ep-display').hide()"
+                    id="single-button"
+                    onclick="
+                        $(
+                            '#album-display, #single-display, #ep-display',
+                        ).hide();
+                        $('.release-type-button.active-button').removeClass(
+                            'active-button',
+                        );
+
+                        $('#single-display').show();
+                        $(this).addClass('active-button');
+                    "
                 >
                     Singles
                 </button>
@@ -69,6 +81,7 @@
                 <div id="ep-display"></div>
                 <div id="single-display"></div>
             </div>
+            <p>Back to <a href="">Main Page</a></p>
         </main>
     </body>
 </html>
