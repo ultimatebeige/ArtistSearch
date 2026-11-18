@@ -1,0 +1,22 @@
+html {
+    background-color: #d2b48c;
+}
+
+img {
+    width: 100%;
+    border-radius: 16px;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+@media (min-width: 700px) {
+    p {
+        width: 700px;
+    }
+
+    img {
+        width: 700px;
+    }
+}

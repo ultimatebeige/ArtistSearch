@@ -1,6 +1,13 @@
+
 html {
     /* background-color: black; */
     background-color: #d2b48c;
+    height: 100dvh;
+}
+
+html, body {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 main {

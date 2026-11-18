@@ -3,85 +3,41 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Test</title>
-        <script src="lib/jquery-4.0.0.min.js"></script>
-        <script src="script.js" defer></script>
-        <link rel="stylesheet" href="styles.css" />
+        <title>Home</title>
+        <link rel="stylesheet" href="main.css" />
     </head>
 
-    <body>
-        <main>
-            <p id="error-display"></p>
-            <form id="artist-form">
-                <label for="form-input-artist">Search Term</label>
-                <input type="text" id="form-input-artist" name="search-term" />
-                <input type="submit" />
-            </form>
-            <!--
-            <form id="album-form">
-                <label for="form-input-album">Search Term</label>
-                <input
-                    type="text"
-                    id="form-input-album"
-                    name="search-term"
-                /><br />
-                <input type="submit" />
-            </form>
-            -->
-            <aside id="artist-display"></aside>
-            <div id="release-buttons">
-                <button
-                    class="release-type-button"
-                    onclick="
-                        $('#album-display, #single-display, #ep-display')
-                            .hide()
-                        $('release-type-button.active-button').removeClass(
-                            'active-button',
-                        );
-                        $('#album-display').show();
-                        $(this).addClass('active-button');
-                    "
-                >
-                    Albums
-                </button>
-                <button
-                    class="release-type-button"
-                    onclick="
-                        $('#album-display, #single-display, #ep-display')
-                            .hide()
-                        $('release-type-button.active-button').removeClass(
-                            'active-button',
-                        );
-                        $('#ep-display').show();
-                        $(this).addClass('active-button');
-                    "
-                >
-                    EPs
-                </button>
-                <button
-                    class="release-type-button"
-                    id="single-button"
-                    onclick="
-                        $(
-                            '#album-display, #single-display, #ep-display',
-                        ).hide();
-                        $('.release-type-button.active-button').removeClass(
-                            'active-button',
-                        );
-
-                        $('#single-display').show();
-                        $(this).addClass('active-button');
-                    "
-                >
-                    Singles
-                </button>
-            </div>
-            <div id="release-display">
-                <div id="album-display"></div>
-                <div id="ep-display"></div>
-                <div id="single-display"></div>
-            </div>
-            <p>Back to <a href="">Main Page</a></p>
-        </main>
-    </body>
+    <main>
+        <h1>My artist quick reference search.</h1>
+        <h2>Why I made this:</h2>
+        <p>
+            I love music, but one thing I despise is having to search through
+            popular streaming services to find all of my artists songs. They
+            either make it obnoxious to scroll through it or only show the top
+            couple of songs by popularity. I decided that I wanted a quick way
+            to find songs, and I needed to improve my html and css knowledge so
+            I made this quick page to learn them.
+        </p>
+        <h2>How it works:</h2>
+        <p>
+            This uses a combination of the MusicBrainz API and the Internet
+            Archive's Coverartarchive service. It first finds the artist
+            information then it will query the API to get the first 100 release,
+            both albums, EPs, and regular songs. I then can use the song id
+            directly in the coverartarchive to fetch the release cover and
+            display it with some Javascript.
+        </p>
+        <h2>Usage:</h2>
+        <p>
+            Simply type in the artist name and hit enter or click the search
+            button. You can then click whichever box seems to be your artist and
+            it will pop up with the singles. You can switch to the artist's
+            albums or EPs by clicking the respective buttons.
+        </p>
+        <h2>Example Usage:</h2>
+        <img src="photos/Demonstration.png" />
+        <h2>Links:</h2>
+        <p><a href="FAQ.html">FAQ</a></p>
+        <p><a href="search.html">Search Page</a></p>
+    </main>
 </html>

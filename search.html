@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Artist Search</title>
+        <script src="lib/jquery-4.0.0.min.js"></script>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="search.css" />
+    </head>
+
+    <body>
+        <main>
+            <p id="error-display"></p>
+            <form id="artist-form">
+                <label for="form-input-artist">Search Term</label>
+                <input type="text" id="form-input-artist" name="search-term" />
+                <input type="submit" />
+            </form>
+            <!--
+            <form id="album-form">
+                <label for="form-input-album">Search Term</label>
+                <input
+                    type="text"
+                    id="form-input-album"
+                    name="search-term"
+                /><br />
+                <input type="submit" />
+            </form>
+            -->
+            <aside id="artist-display"></aside>
+            <div id="release-buttons">
+                <button
+                    class="release-type-button"
+                    onclick="
+                        $('#album-display, #single-display, #ep-display')
+                            .hide()
+                        $('release-type-button.active-button').removeClass(
+                            'active-button',
+                        );
+                        $('#album-display').show();
+                        $(this).addClass('active-button');
+                    "
+                >
+                    Albums
+                </button>
+                <button
+                    class="release-type-button"
+                    onclick="
+                        $('#album-display, #single-display, #ep-display')
+                            .hide()
+                        $('release-type-button.active-button').removeClass(
+                            'active-button',
+                        );
+                        $('#ep-display').show();
+                        $(this).addClass('active-button');
+                    "
+                >
+                    EPs
+                </button>
+                <button
+                    class="release-type-button"
+                    id="single-button"
+                    onclick="
+                        $(
+                            '#album-display, #single-display, #ep-display',
+                        ).hide();
+                        $('.release-type-button.active-button').removeClass(
+                            'active-button',
+                        );
+
+                        $('#single-display').show();
+                        $(this).addClass('active-button');
+                    "
+                >
+                    Singles
+                </button>
+            </div>
+            <div id="release-display">
+                <div id="album-display"></div>
+                <div id="ep-display"></div>
+                <div id="single-display"></div>
+            </div>
+            <p>Back to <a href="index.html">Main Page</a></p>
+        </main>
+    </body>
+</html>
