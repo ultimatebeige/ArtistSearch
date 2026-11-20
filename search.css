@@ -1,11 +1,11 @@
-
 html {
     /* background-color: black; */
     background-color: #d2b48c;
     height: 100dvh;
 }
 
-html, body {
+html,
+body {
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -72,7 +72,7 @@ button,
 
 p {
     font-size: 0.8em;
-    margin: 2px;
+    align-self: center;
 }
 
 .release-container {

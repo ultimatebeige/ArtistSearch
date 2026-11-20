@@ -32,46 +32,20 @@
             <div id="release-buttons">
                 <button
                     class="release-type-button"
-                    onclick="
-                        $('#album-display, #single-display, #ep-display')
-                            .hide()
-                        $('release-type-button.active-button').removeClass(
-                            'active-button',
-                        );
-                        $('#album-display').show();
-                        $(this).addClass('active-button');
-                    "
+                    onclick="offButtons('#release-display', this)"
                 >
                     Albums
                 </button>
                 <button
                     class="release-type-button"
-                    onclick="
-                        $('#album-display, #single-display, #ep-display')
-                            .hide()
-                        $('release-type-button.active-button').removeClass(
-                            'active-button',
-                        );
-                        $('#ep-display').show();
-                        $(this).addClass('active-button');
-                    "
+                    onclick="offButtons('#ep-display', this)"
                 >
                     EPs
                 </button>
                 <button
                     class="release-type-button"
                     id="single-button"
-                    onclick="
-                        $(
-                            '#album-display, #single-display, #ep-display',
-                        ).hide();
-                        $('.release-type-button.active-button').removeClass(
-                            'active-button',
-                        );
-
-                        $('#single-display').show();
-                        $(this).addClass('active-button');
-                    "
+                    onclick="offButtons('#single-display', this)"
                 >
                     Singles
                 </button>

@@ -42,6 +42,12 @@ async function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+function offButtons(display_type, button) {
+    $("#album-display, #single-display, #ep-display").hide();
+    $(".release-type-button").removeClass("active-button");
+    $(display_type).show();
+    $(button).addClass("active-button");
+}
 async function searchArtist(artist) {
     const url = new URL("https://musicbrainz.org/ws/2/artist/");
 
@@ -61,7 +67,18 @@ async function searchArtist(artist) {
         const error = await response.text();
         console.error("Status:", response.status);
         console.error("Response:", error);
-        $("#error-display").text(error);
+        let errDisplay = $("#error-display");
+        if (response.status == 404) {
+            errDisplay.text("Error: Artist Not Found");
+        } else if (response.status == 400) {
+            errDisplay.text("Error: Malformed request");
+        } else if (response.status == 503) {
+            errDisplay.text(
+                "Error: Too many requests, wait a second before trying again",
+            );
+        } else {
+            errDisplay("Error:" + error);
+        }
         throw new Error(error);
     }
 
