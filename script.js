@@ -26,7 +26,7 @@ document
                 .on("click", function () {
                     $("#error-display").text("");
                     $(".artist-button.active-button").removeClass(
-                        "active-button",
+                        "active-button"
                     );
                     $(this).addClass("active-button");
 
@@ -34,6 +34,9 @@ document
                 });
             $("#artist-display").append(btn);
         }
+
+        await sleep(2000);
+        $("#artist-display").children().first().click();
 
         console.log(artists);
     });
